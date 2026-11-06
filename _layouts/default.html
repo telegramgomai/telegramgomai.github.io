@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#03343c">
+
+  <title>{% if page.url == '/' %}{{ page.title }}{% else %}{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+
+  <!-- Favicon / 站点图标 -->
+  <link rel="icon" href="{{ site.url }}/assets/images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/assets/images/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ site.url }}/assets/images/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/assets/images/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  {% if page.image %}{% assign og_img = page.image | replace: '.webp', '-thumb.webp' %}<meta property="og:image" content="{{ site.url }}{{ og_img }}">{% endif %}
+
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/style-tg-v2.css">
+</head>
+<body>
+  <div class="citrus-scene" aria-hidden="true">
+    <div class="scene-ribbon ribbon-cyan"></div>
+    <div class="scene-ribbon ribbon-orange"></div>
+    <div class="scene-grid"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="{{ site.url }}/" aria-label="{{ site.title }} 首页">
+      <span class="brand-logo" aria-hidden="true">✈️</span>
+      <span>纸飞机批发<span class="brand-divider">/</span><span class="brand-product">Telegram 账号</span></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="{{ site.url }}/" {% if page.url == '/' %}class="active"{% endif %}>首页</a>
+      <a href="{{ site.url }}/#price-table">价格表</a>
+      <a href="{{ site.url }}/#shop-section">号源</a>
+      <a href="{{ site.url }}/articles/">选购指南</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    {% if page.layout == 'post' %}
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="{{ site.url }}/">首页</a> ›
+      <a href="{{ site.url }}/articles/">选购指南</a> ›
+      {% if page.category %}<a href="{% include cat_url.html cat=page.category %}">{{ page.category }}</a> ›{% endif %}
+      <span>{{ page.title | truncate: 24 }}</span>
+    </nav>
+    {% endif %}
+
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div>
+        <a class="brand" href="{{ site.url }}/">
+          <span class="brand-logo" aria-hidden="true">✈️</span>
+          <span>纸飞机批发 / Telegram 账号</span>
+        </a>
+        <p>TG 老号、新号、成品号批量供货，价格透明可查。</p>
+        <p class="footer-note">本站为独立整理的选购指南，与 Telegram 官方无隶属或合作关系。</p>
+      </div>
+      <nav aria-label="号源">
+        <a href="{{ site.url }}/#price-table">价格表</a>
+        <a href="{{ site.url }}/#shop-section">全部号源</a>
+        <a href="{{ site.url }}/articles/">选购指南</a>
+        <span>Telegram · 电报 · 纸飞机</span>
+      </nav>
+      <nav aria-label="关于本站">
+        <a href="{{ site.url }}/articles/">新手入门</a>
+        <a href="{{ site.url }}/#safe-title">防封要点</a>
+        <a href="{{ site.url }}/#faq">常见问题</a>
+        <span>内容持续维护 · 欢迎纠错</span>
+      </nav>
+    </div>
+    <div class="footer-meta">
+      <span>© {{ site.time | date: '%Y' }} {{ site.title }}</span>
+      <a href="{{ site.url }}/#price-table">查看全部号源</a>
+    </div>
+  </footer>
+</body>
+</html>
