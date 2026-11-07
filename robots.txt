@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /feed.xml
 
 Sitemap: https://telegramgomai.github.io/sitemap.xml

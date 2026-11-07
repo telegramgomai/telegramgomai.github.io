@@ -1,23 +1,25 @@
 ---
 layout: default
-title: Telegram账号购买 - TG账号_TG号_纸飞机账号批发出售
-description: Telegram账号购买与TG账号批发，提供TG老号、新号、成品号、接码号现货供应。支持个人购买与工作室批量采购，价格透明、自动发货、质保首次登录，账号到手即可使用。
-keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,TG账号批发,纸飞机账号购买,Telegram成品号,TG成品号,Telegram老号,TG老号,Telegram接码号,TG接码号,纸飞机账号批发,Telegram账号出售,TG账号出售
+title: 纸飞机账号购买 - Telegram账号_TG账号_纸飞机账号批发出售
+description: 纸飞机账号、Telegram账号、TG账号购买与出售，提供成品号、老号、会员账号等不同类型，支持个人购买和批量采购，了解账号价格、类型及使用情况，选择适合自己的Telegram账号。
+keywords: 纸飞机账号,Telegram账号,TG账号,纸飞机账号购买,Telegram账号购买,TG账号购买,纸飞机账号出售,Telegram账号出售,TG号购买,Telegram成品号,Telegram老号,纸飞机账号批发,Telegram账号批发,Telegram会员账号
 ---
+
+{% assign tg = site.data.tg_products %}
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <span class="eyebrow"><i></i> TELEGRAM ACCOUNTS / 购买与批发</span>
-    <h1 id="hero-title">Telegram账号，<br>按需拿货</h1>
-    <p class="lead">TG老号、新号、成品号、接码号，<em>现货直发。</em></p>
+    <span class="eyebrow"><i></i> TELEGRAM ACCOUNTS / 现货批量供应</span>
+    <h1 id="hero-title">纸飞机账号，<br>按需拿货</h1>
+    <p class="lead">老号、新号、接码号，<em>现货直发。</em></p>
     <p class="hero-description">TG 接码号 · 1-10 年老号 · 混合国家现货<br>价格与库存同步商城，下单自动发货，质保首次登录。</p>
     <div class="hero-actions">
-      <a class="primary-button" href="https://shop.xinkonyun.cc/products" target="_blank" rel="nofollow noopener">进入商城选号 <span aria-hidden="true">↗</span></a>
-      <a class="text-button" href="#price-table">先看价格表 <span aria-hidden="true">→</span></a>
+      <a class="primary-button" href="{{ site.url }}/products/">查看全部号源 <span aria-hidden="true">→</span></a>
+      <a class="text-button" href="{{ site.url }}/price/">看价格表 <span aria-hidden="true">→</span></a>
     </div>
     <div class="status-row">
       <span class="online-dot" aria-hidden="true"></span>
-      <span>33 个号源在售 · 数据抓取于 {{ site.time | date: '%m-%d %H:%M' }}</span>
+      <span>{{ tg.in_stock_count }} 个号源在售 · 数据抓取于 {{ tg.updated }}</span>
     </div>
   </div>
   <div class="hero-passport" aria-hidden="true">
@@ -28,7 +30,7 @@ keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,T
       <span class="passport-symbol">TG<span>✳</span></span>
       <div class="passport-bottom">
         <span>BULK<br>READY.</span>
-        <span class="passport-countries">老号　新号　接码<br><small>33 个号源 · 现货</small></span>
+        <span class="passport-countries">老号　新号　接码<br><small>23 个号源 · 现货</small></span>
       </div>
     </div>
     <span class="passport-float">✦　价格实时同步商城</span>
@@ -50,48 +52,53 @@ keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,T
   </div>
 </section>
 
-<section class="section shop-section" id="shop-section" aria-labelledby="shop-title">
+<section class="section shop-section" aria-labelledby="shop-title">
   <div class="section-head">
     <h2 id="shop-title">🛒 主推号源</h2>
-    <a href="https://shop.xinkonyun.cc/products" class="more-link" rel="nofollow noopener" target="_blank">进入商城 →</a>
+    <a href="{{ site.url }}/products/" class="more-link" >查看全部号源 →</a>
   </div>
   <div class="shop-grid">
-    <a class="shop-card hot" href="https://shop.xinkonyun.cc/products" rel="nofollow noopener" target="_blank">
+    {% assign card1 = tg.new | where: "title", "TG API 混合国家双向号" | first %}
+    <a class="shop-card hot" href="{{ site.url }}/products/" >
       <span class="shop-tag">最划算</span>
       <h3>混合国家双向号<small>接码号 · 大批量走量</small></h3>
-      <div class="shop-price"><i>¥</i><b>3.04</b><em>/ 个起</em></div>
-      <p class="shop-desc">当前库存 435 个，是站内最低价档。适合批量注册、需要大量验证码的走量场景，单号成本压到最低。</p>
-      <span class="shop-cta">查看该号源 <span aria-hidden="true">↗</span></span>
+      <div class="shop-price"><i>¥</i><b>{{ card1.price_f | split: '.' | first }}</b><em>/ 个起</em></div>
+      <p class="shop-desc">当前库存 {{ card1.stock }} 个，是站内最低价档。适合批量注册、需要大量验证码的走量场景，单号成本压到最低。</p>
+      <span class="shop-cta">查看该号源 <span aria-hidden="true">→</span></span>
     </a>
-    <a class="shop-card" href="https://shop.xinkonyun.cc/products" rel="nofollow noopener" target="_blank">
+    {% assign card2 = tg.new | where: "title", "TGAPI  +55  巴西 1-12月" | first %}
+    {% unless card2 %}{% assign card2 = tg.new | where_exp: "x", "x.title contains '巴西'" | first %}{% endunless %}
+    <a class="shop-card" href="{{ site.url }}/products/">
       <span class="shop-tag">走量</span>
       <h3>巴西 / 利比里亚 号<small>1-12 月 · 库存充足</small></h3>
-      <div class="shop-price"><i>¥</i><b>7.70</b><em>/ 个</em></div>
-      <p class="shop-desc">巴西库存 429、利比里亚 122，属于补货稳定的常见档位。适合需要固定国家、又要持续补号的团队。</p>
-      <span class="shop-cta">查看该号源 <span aria-hidden="true">↗</span></span>
+      <div class="shop-price"><i>¥</i><b>{{ card2.price_f | split: '.' | first }}</b><em>/ 个</em></div>
+      <p class="shop-desc">巴西库存 {{ card2.stock }}、利比里亚 101，属于补货稳定的常见档位。适合需要固定国家、又要持续补号的团队。</p>
+      <span class="shop-cta">查看该号源 <span aria-hidden="true">→</span></span>
     </a>
-    <a class="shop-card" href="https://shop.xinkonyun.cc/products" rel="nofollow noopener" target="_blank">
+    {% assign card3 = tg.old | where_exp: "x", "x.title contains '刚果布'" | first %}
+    <a class="shop-card" href="{{ site.url }}/products/">
       <span class="shop-tag">稳定推荐</span>
       <h3>老号 1-10 年<small>刚果布 / 伊拉克 / 混合</small></h3>
-      <div class="shop-price"><i>¥</i><b>22</b><em>/ 个起</em></div>
-      <p class="shop-desc">注册 1 到 10 年的老号，刚果布 40 个、伊拉克 59 个现货在库。适合对账号年龄有要求、怕新号容易被限制的场景。</p>
-      <span class="shop-cta">查看该号源 <span aria-hidden="true">↗</span></span>
+      <div class="shop-price"><i>¥</i><b>{{ card3.price_f | split: '.' | first }}</b><em>/ 个起</em></div>
+      <p class="shop-desc">注册 1 到 10 年的老号，刚果布 {{ card3.stock }} 个、伊拉克 25 个现货在库。适合对账号年龄有要求、怕新号容易被限制的场景。</p>
+      <span class="shop-cta">查看该号源 <span aria-hidden="true">→</span></span>
     </a>
-    <a class="shop-card" href="https://shop.xinkonyun.cc/products" rel="nofollow noopener" target="_blank">
+    {% assign card4 = tg.old | where_exp: "x", "x.title contains '混合稳定国家'" | first %}
+    <a class="shop-card" href="{{ site.url }}/products/">
       <span class="shop-tag">顶配</span>
       <h3>混合稳定国家老号<small>1-10 年 · 最稳档</small></h3>
-      <div class="shop-price"><i>¥</i><b>28.60</b><em>/ 个</em></div>
-      <p class="shop-desc">站内价格最高的老号档，混合稳定国家、注册时长 1-10 年，库存 46 个。适合要长期挂着用、不想反复换号的用途。</p>
-      <span class="shop-cta">查看该号源 <span aria-hidden="true">↗</span></span>
+      <div class="shop-price"><i>¥</i><b>{{ card4.price_f | split: '.' | first }}</b><em>/ 个</em></div>
+      <p class="shop-desc">站内价格最高的老号档，混合稳定国家、注册时长 1-10 年，库存 {{ card4.stock }} 个。适合要长期挂着用、不想反复换号的用途。</p>
+      <span class="shop-cta">查看该号源 <span aria-hidden="true">→</span></span>
     </a>
   </div>
-  <p class="shop-note">以上价格与库存均来自商城实时数据（抓取时间 {{ site.time | date: '%Y-%m-%d %H:%M' }}），实际以下单时商城页面为准。账号为虚拟商品，发货后不支持退换，请先确认用途再下单。</p>
+  <p class="shop-note">以上价格与库存均来自商城实时数据（抓取时间 {{ tg.updated }}），实际以下单时商城页面为准。账号为虚拟商品，发货后不支持退换，请先确认用途再下单。</p>
 </section>
 
 <section class="section" id="price-table" aria-labelledby="pt-title">
   <div class="section-head">
     <h2 id="pt-title">💰 号源价格表</h2>
-    <span class="more-link">共 33 个在售号源</span>
+    <span class="more-link">共 {{ tg.total }} 个号源</span>
   </div>
   <div class="price-table-wrap">
     <table class="price-table">
@@ -99,42 +106,28 @@ keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,T
         <tr><th>号源</th><th>类型</th><th>价格</th><th>库存</th></tr>
       </thead>
       <tbody>
-        <tr><td>TG API 混合国家双向号</td><td>新号</td><td>¥3.04</td><td class="st-ok">435</td></tr>
-        <tr><td>TGAPI +213 阿尔及利亚</td><td>新号</td><td>¥5.50</td><td class="st-ok">249</td></tr>
-        <tr><td>TGAPI +502 危地马拉 2-6个月</td><td>新号</td><td>¥6.60</td><td class="st-ok">113</td></tr>
-        <tr><td>TGAPI +55 巴西 1-12月</td><td>新号</td><td>¥7.70</td><td class="st-ok">429</td></tr>
-        <tr><td>TGAPI +231 利比里亚 1-12月</td><td>新号</td><td>¥7.70</td><td class="st-ok">122</td></tr>
-        <tr><td>TGAPI +595 巴拉圭 1-12月</td><td>新号</td><td>¥7.70</td><td class="st-ok">96</td></tr>
-        <tr><td>TGAPI +98 伊朗 注册满1年+</td><td>新号</td><td>¥8.54</td><td class="st-ok">238</td></tr>
-        <tr><td>TGAPI +977 尼泊尔 注册满1年+</td><td>新号</td><td>¥8.54</td><td class="st-ok">113</td></tr>
-        <tr><td>TGAPI +84 越南 1-3个月+</td><td>新号</td><td>¥10.74</td><td class="st-ok">73</td></tr>
-        <tr><td>TGAPI +509 海地 注册满1年+</td><td>新号</td><td>¥11.00</td><td class="st-ok">260</td></tr>
-        <tr><td>TGAPI 混合国家 稳定 老号</td><td>新号</td><td>¥14.65</td><td class="st-ok">39</td></tr>
-        <tr><td>TGAPI +852 香港 2-6月</td><td>新号</td><td>¥19.36</td><td class="st-ok">46</td></tr>
-        <tr><td>TGAPI +964 伊拉克 1-12月</td><td>新号</td><td>¥19.36</td><td class="st-ok">99</td></tr>
-        <tr><td>TGAPI +243 刚果金 1-10年</td><td>老号</td><td>¥22.00</td><td class="st-ok">10</td></tr>
-        <tr><td>TGAPI +242 刚果布 1-10年</td><td>老号</td><td>¥22.00</td><td class="st-ok">40</td></tr>
-        <tr><td>TGAPI +964 伊拉克 1-10年</td><td>老号</td><td>¥26.40</td><td class="st-ok">59</td></tr>
-        <tr><td>TGAPI 混合稳定国家 1-10年</td><td>老号</td><td>¥28.60</td><td class="st-ok">46</td></tr>
+        {% for p in tg.products %}
+        <tr>
+          <td>{{ p.title }}</td>
+          <td>{% if p.cat_slug == 'old' %}老号{% else %}新号{% endif %}</td>
+          <td>¥{{ p.price_f }}</td>
+          <td class="{{ p.stock_cls }}">{% if p.stock == 0 %}缺货{% elsif p.stock <= 10 %}仅 {{ p.stock }}{% else %}{{ p.stock }}{% endif %}</td>
+        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
-  <p class="table-more">表中为库存充足的主力档位，另有塞内加尔、布基纳法索、几内亚、喀麦隆、罗马尼亚、委内瑞拉、秘鲁、哈萨克斯坦、叙利亚、墨西哥、以色列、菲律宾、多米尼加等号源，<a href="https://shop.xinkonyun.cc/products" target="_blank" rel="nofollow noopener">在商城查看全部 33 个号源 →</a></p>
+  <p class="table-more">表中为全部在售号源，另有小众国家档位补货不稳定会临时缺货，<a href="{{ site.url }}/products/" target="_blank" rel="nofollow noopener">查看全部号源详情 →</a></p>
 </section>
 
-<section class="section" aria-labelledby="how-title">
+<section class="section" id="how-title">
   <div class="section-head">
     <h2 id="how-title">🔗 拿号流程</h2>
-    <a href="https://shop.xinkonyun.cc/products" class="more-link" rel="nofollow noopener" target="_blank">开始下单 →</a>
+    <a href="{{ site.url }}/products/" class="more-link" >选号下单 →</a>
   </div>
   <ol class="steps-list">
     <li><strong>确认要哪种号</strong>：先说清用途。只是要个能登录的号，混合国家双向号 ¥3.04 就够；要挂长期、介意账号年龄，直接看 1-10 年老号档（¥22 起）。批量拿货先问阶梯价。</li>
-    <li><strong>在商城下单</strong>：进入商城选对应号源，登录后选择数量付款。号源是自动发货类型，付款完成系统直接发出，不用等人工。
-      <figure class="step-fig">
-        <img src="{{ site.url }}/assets/images/tg-platform.webp" alt="Telegram 新账号的三种获取方式：购买成品号、使用境外手机号注册、使用 +86 手机号注册" loading="lazy" width="1200" height="675">
-        <figcaption>拿号基本就这三条路。买号是最快的，自己注册则需要能收码的境外号码 —— 这也是接码号存在的理由。</figcaption>
-      </figure>
-    </li>
+    <li><strong>在商城下单</strong>：进入商城选对应号源，登录后选择数量付款。号源是自动发货类型，付款完成系统直接发出，不用等人工。</li>
     <li><strong>收货内容</strong>：你会拿到「手机号码（即账号）」和「获取验证码的网址」两样东西。接码链接有 180 天有效期，够完成首次登录，不要当长期短信接收器用。</li>
     <li><strong>登录后立刻做三件事</strong>：改两步验证密码、能改邮箱就改成自己的、24 小时后把所有陌生设备踢掉。这三步直接影响号能不能留住。</li>
     <li><strong>养号再上量</strong>：登录后 12-24 小时再改名、换头像；先休息一天、偶尔登录，之后小批量加群。上来就加十几二十个群、发几百条消息，号基本活不过一天。</li>
@@ -145,7 +138,7 @@ keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,T
   </div>
 </section>
 
-<section class="section" aria-labelledby="safe-title">
+<section class="section" id="safe-title">
   <div class="section-head">
     <h2 id="safe-title">🛡️ 到手后怎么不废号</h2>
     <span class="more-link">按这个顺序设置</span>
@@ -178,20 +171,6 @@ keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,T
       </div>
     </div>
   </div>
-  <div class="fig-row">
-    <figure>
-      <img src="{{ site.url }}/assets/images/tg-finished-account.webp" alt="Telegram 隐私与安全设置中的两步验证设置界面" loading="lazy" width="745" height="412">
-      <figcaption>两步验证在「隐私与安全」里</figcaption>
-    </figure>
-    <figure>
-      <img src="{{ site.url }}/assets/images/tg-where-to-buy.webp" alt="Telegram 账号被限制登录时的自查与恢复流程" loading="lazy" width="1200" height="674">
-      <figcaption>被限制了先自查原因</figcaption>
-    </figure>
-    <figure>
-      <img src="{{ site.url }}/assets/images/tg-account-buy.webp" alt="Telegram 注册流程：手机号注册、验证码验证、隐私设置三步" loading="lazy" width="900" height="498">
-      <figcaption>手机号 + 验证码是登录基础</figcaption>
-    </figure>
-  </div>
   <div class="warn-bar">
     <i>🔒</i>
     <div><b>一条底线：</b>没人会为了「解封」要你的账号密码。Telegram 官方不会，客服也不会。任何声称能帮你解封、要你登录他设备的，都是冲着号去的。</div>
@@ -202,16 +181,12 @@ keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,T
   <div class="section-head"><h2>📖 买之前先搞清这几件事</h2></div>
   <div class="guide-grid">
     <article>
-      <h3>接码号和成品号的区别</h3>
-      <p>接码号给你的是「手机号 + 验证码网址」，账号本身要靠你自己首次登录来完成；成品号是已经登录好、资料齐全的号。前者便宜适合走量，后者省事但单价高。</p>
+      <h3>接码号是什么</h3>
+      <p>接码号，商品里标成 TGAPI / TG API，是提供虚拟手机号用于 Telegram 注册/登录验证的一类账号类型。你买到的不是已经登录好的成品号，而是一套「手机号 + 接码链接」。</p>
     </article>
     <article>
-      <h3>为什么新号比老号便宜</h3>
-      <p>注册时间越长，号越不容易被判定为异常注册，风控门槛也越低。1-10 年的老号单价 ¥22 起，刚注册的混合国家号 ¥3.04，差价买的就是「年龄」。</p>
-    </article>
-    <article>
-      <h3>国家怎么选</h3>
-      <p>看你的使用场景。需要低成本的批量号就选库存大的混合档；需要特定地区就用对应国家码。库存只有个位数的是小众档，补货不稳定。</p>
+      <h3>为什么老号贵</h3>
+      <p>老号贵在「账号年龄」。注册时间越长，号越不容易被判定为异常注册，风控门槛也越低。1-10 年的老号单价 ¥22 起，刚注册的混合国家号 ¥3.04，差价买的其实是「年龄」。</p>
     </article>
     <article>
       <h3>为什么要质保首次登录</h3>
@@ -225,14 +200,14 @@ keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,T
   <div class="faq-list">
     <details>
       <summary>TG 账号多少钱一个？</summary>
-      <p>按型号分档：混合国家双向号 ¥3.04 起，常见国家接码号 ¥5.50–¥11.00，1-10 年老号 ¥22.00–¥28.60。批发量大可谈阶梯价，具体以商城页面报价为准。</p>
+      <p>按型号分档：混合国家双向号 ¥3.04 起，常见国家接码号 ¥5.50 – ¥11.00，1-10 年老号 ¥22.00 – ¥28.60。批发量大可谈阶梯价，具体以商城页面报价为准。</p>
     </details>
     <details>
       <summary>买号是自动发货吗？要等多久？</summary>
       <p>是自动发货。付款完成后系统直接发出手机号和接码网址，不用等人工审核。如果长时间没收到，先看商城的订单详情页。</p>
     </details>
     <details>
-      <summary>接码链接 180 天，是不是能一直收短信？</summary>
+      <summary>接码链接 180 天，能一直收短信吗？</summary>
       <p>不能。这个链接只是为了让首次登录方便，本质上是一次性的。我们把有效期设到 180 天是为了给你留足时间，不是让你当长期短信接收器用。</p>
     </details>
     <details>
@@ -247,5 +222,27 @@ keywords: Telegram账号购买,TG账号购买,TG号购买,Telegram账号批发,T
       <summary>买的号能改密码、绑自己的手机吗？</summary>
       <p>可以。登录后就能改两步验证密码，能改邮箱的号也可以绑自己的邮箱；手机端登录后 24 小时内绑定自己的号码更稳。</p>
     </details>
+    <details>
+      <summary>账号是虚拟商品，能退吗</summary>
+      <p>发货后不支持退换。请先确认用途再下单。质保首次登录——首登失败凭订单号找客服处理，别自己反复试。</p>
+    </details>
+    <details>
+      <summary>怎么联系客服问批发价</summary>
+      <p>商城下单页面有客服入口。批量采购（一般 50 个以上）可在商城内直接咨询阶梯价。</p>
+    </details>
   </div>
 </section>
+
+<script>
+document.querySelectorAll('.cat-tabs a').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var t = a.getAttribute('data-tab');
+    document.querySelectorAll('.cat-tabs a').forEach(function (x) { x.classList.remove('on'); });
+    a.classList.add('on');
+    document.querySelectorAll('.plist[data-group]').forEach(function (s) {
+      s.hidden = (s.getAttribute('data-group') !== t);
+    });
+  });
+});
+</script>

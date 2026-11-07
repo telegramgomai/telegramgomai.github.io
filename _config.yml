@@ -1,7 +1,7 @@
 title: Telegram账号购买 · TG账号_TG号_纸飞机账号批发出售
 url: "https://telegramgomai.github.io"
 baseurl: ""
-description: Telegram账号购买与TG账号批发服务，提供TG老号、新号、成品号、接码号现货供应，支持个人购买和工作室批量采购。价格透明、自动发货、质保首次登录。
+description: Telegram账号购买与TG账号批发，提供TG老号、新号、成品号、接码号现货供应。支持个人购买与工作室批量采购，价格透明、自动发货、质保首次登录，账号到手即可使用。
 lang: zh-CN
 markdown: kramdown
 permalink: /articles/:name/
@@ -25,4 +25,5 @@ defaults:
 exclude:
   - README.md
   - TG_PRODUCT_DATA.md
+  - _config.local.yml
   - Gemfile.lock

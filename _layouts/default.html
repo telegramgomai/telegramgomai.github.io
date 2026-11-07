@@ -25,7 +25,7 @@
   <meta property="og:site_name" content="{{ site.title }}">
   {% if page.image %}{% assign og_img = page.image | replace: '.webp', '-thumb.webp' %}<meta property="og:image" content="{{ site.url }}{{ og_img }}">{% endif %}
 
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/style-tg-v2.css">
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/{{ site.css_name | default: 'style.css' }}">
 </head>
 <body>
   <div class="citrus-scene" aria-hidden="true">
@@ -41,9 +41,10 @@
     </a>
     <nav class="nav" aria-label="主导航">
       <a href="{{ site.url }}/" {% if page.url == '/' %}class="active"{% endif %}>首页</a>
-      <a href="{{ site.url }}/#price-table">价格表</a>
-      <a href="{{ site.url }}/#shop-section">号源</a>
-      <a href="{{ site.url }}/articles/">选购指南</a>
+      <a href="{{ site.url }}/products/" {% if page.url contains '/products' %}class="active"{% endif %}>全部号源</a>
+      <a href="{{ site.url }}/articles/" {% if page.url contains '/articles/' %}class="active"{% endif %}>选购指南</a>
+      <a href="{{ site.url }}/price/" {% if page.url contains '/price' %}class="active"{% endif %}>价格表</a>
+      <a class="nav-cta" href="https://shop.xinkonyun.cc/products" target="_blank" rel="nofollow noopener">商城下单 <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
@@ -71,21 +72,21 @@
         <p class="footer-note">本站为独立整理的选购指南，与 Telegram 官方无隶属或合作关系。</p>
       </div>
       <nav aria-label="号源">
-        <a href="{{ site.url }}/#price-table">价格表</a>
-        <a href="{{ site.url }}/#shop-section">全部号源</a>
+        <a href="{{ site.url }}/products/">全部号源</a>
+        <a href="{{ site.url }}/price/">价格表</a>
         <a href="{{ site.url }}/articles/">选购指南</a>
         <span>Telegram · 电报 · 纸飞机</span>
       </nav>
       <nav aria-label="关于本站">
         <a href="{{ site.url }}/articles/">新手入门</a>
-        <a href="{{ site.url }}/#safe-title">防封要点</a>
-        <a href="{{ site.url }}/#faq">常见问题</a>
+        <a href="{{ site.url }}/articles/">防封要点</a>
+        <a href="{{ site.url }}/articles/">常见问题</a>
         <span>内容持续维护 · 欢迎纠错</span>
       </nav>
     </div>
     <div class="footer-meta">
       <span>© {{ site.time | date: '%Y' }} {{ site.title }}</span>
-      <a href="{{ site.url }}/#price-table">查看全部号源</a>
+      <a href="{{ site.url }}/products/">查看全部号源</a>
     </div>
   </footer>
 </body>

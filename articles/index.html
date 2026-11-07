@@ -1,0 +1,87 @@
+---
+layout: default
+title: 选购指南 - 纸飞机账号购买教程_Telegram账号使用指南
+description: Telegram 账号选购指南：新号与老号区别、接码号使用教程、防封要点、登录设置、常见问题。买 TG 账号前先看这些。
+keywords: 纸飞机账号教程,Telegram账号使用,接码号使用,Telegram防封,TG账号选购,电报账号指南
+---
+
+<section class="page-hero">
+  <h1>选购指南</h1>
+  <p>买 Telegram 账号前，先搞清这些：接码号怎么用、老号新号怎么选、登录后怎么设置才不废号、被限制怎么处理。</p>
+  <div class="hero-stats">
+    <div><b>{{ site.posts | size }}</b><span>篇指南</span></div>
+    <div><b>4</b><span>个分类</span></div>
+    <div><b>180 天</b><span>接码链接有效期</span></div>
+    <div><b>¥3.04</b><span>最低号源单价</span></div>
+  </div>
+</section>
+
+{% assign cats = site.data.categories %}
+<div class="cat-tabs">
+  <a href="#all" class="on" data-tab="all">全部（{{ site.posts | size }}）</a>
+  {% for cat in cats %}
+    {% assign n = site.posts | where: "category", cat[0] | size %}
+    {% if n > 0 %}<a href="#{{ cat[1] }}" data-tab="{{ cat[1] }}">{{ cat[0] }}（{{ n }}）</a>{% endif %}
+  {% endfor %}
+</div>
+
+<div class="art-list" data-group="all">
+  {% for post in site.posts %}
+  <a class="art-card" href="{{ post.url }}">
+    <div class="art-thumb">
+      {% case post.category %}
+      {% when '使用教程' %}<img src="{{ site.url }}/assets/images/tg-platform.webp" alt="{{ post.title }}" loading="lazy">
+      {% when '账号选购' %}<img src="{{ site.url }}/assets/images/tg-account-buy.webp" alt="{{ post.title }}" loading="lazy">
+      {% when '下载安装' %}<img src="{{ site.url }}/assets/images/tg-where-to-buy.webp" alt="{{ post.title }}" loading="lazy">
+      {% else %}<img src="{{ site.url }}/assets/images/tg-finished-account.webp" alt="{{ post.title }}" loading="lazy">
+      {% endcase %}
+    </div>
+    <div class="art-body">
+      <span class="art-cat">{{ post.category }}</span>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.description }}</p>
+      <span class="art-more">阅读全文 →</span>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+{% for cat in cats %}
+  {% assign n = site.posts | where: "category", cat[0] | size %}
+  {% if n > 0 %}
+  <div class="art-list" data-group="{{ cat[1] }}" hidden>
+    {% for post in site.posts %}{% if post.category == cat[0] %}
+    <a class="art-card" href="{{ post.url }}">
+      <div class="art-thumb">
+        {% case post.category %}
+        {% when '使用教程' %}<img src="{{ site.url }}/assets/images/tg-platform.webp" alt="{{ post.title }}" loading="lazy">
+        {% when '账号选购' %}<img src="{{ site.url }}/assets/images/tg-account-buy.webp" alt="{{ post.title }}" loading="lazy">
+        {% when '下载安装' %}<img src="{{ site.url }}/assets/images/tg-where-to-buy.webp" alt="{{ post.title }}" loading="lazy">
+        {% else %}<img src="{{ site.url }}/assets/images/tg-finished-account.webp" alt="{{ post.title }}" loading="lazy">
+        {% endcase %}
+      </div>
+      <div class="art-body">
+        <span class="art-cat">{{ post.category }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <span class="art-more">阅读全文 →</span>
+      </div>
+    </a>
+    {% endif %}{% endfor %}
+  </div>
+  {% endif %}
+{% endfor %}
+
+<script>
+document.querySelectorAll('.cat-tabs a').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var t = a.getAttribute('data-tab');
+    document.querySelectorAll('.cat-tabs a').forEach(function (x) { x.classList.remove('on'); });
+    a.classList.add('on');
+    document.querySelectorAll('.art-list[data-group]').forEach(function (s) {
+      s.hidden = (s.getAttribute('data-group') !== t);
+    });
+  });
+});
+</script>
