@@ -177,6 +177,32 @@ keywords: 纸飞机账号,Telegram账号,TG账号,纸飞机账号购买,Telegram
   </div>
 </section>
 
+<section class="section" id="latest-articles" aria-labelledby="latest-title">
+  <div class="section-head">
+    <h2 id="latest-title">📚 最新文章</h2>
+    <a href="{{ site.url }}/articles/" class="more-link">查看全部 →</a>
+  </div>
+  <div class="art-list">
+    {% for post in site.posts limit: 6 %}
+    <a class="art-card" href="{{ post.url }}">
+      <div class="art-thumb">
+        {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+        {% else %}
+        <div class="art-thumb-placeholder">TG</div>
+        {% endif %}
+      </div>
+      <div class="art-body">
+        <span class="art-cat">{{ post.date | date: '%m-%d' }} · {{ post.category }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description | truncate: 80 }}</p>
+        <span class="art-more">阅读全文 →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="section seo">
   <div class="section-head"><h2>📖 买之前先搞清这几件事</h2></div>
   <div class="guide-grid">
