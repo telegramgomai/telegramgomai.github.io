@@ -1,0 +1,13 @@
+{
+  "name": "Telegram账号购买 · TG账号批发",
+  "short_name": "TG账号",
+  "description": "Telegram账号购买与TG账号批发，提供TG老号、新号、成品号、接码号现货供应。支持个人购买与工作室批量采购，价格透明、自动发货、质保首次登录，账号到手即可使用。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0088cc",
+  "theme_color": "#0088cc",
+  "icons": [
+    { "src": "/assets/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
