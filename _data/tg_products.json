@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-07 14:22",
+  "updated": "2026-11-07 18:35",
   "updated_day": "2026-11-07",
   "shop_url": "https://shop.xinkonyun.cc/products",
   "total": 23,
   "in_stock_count": 15,
-  "total_stock": 1374,
+  "total_stock": 1325,
   "min_price": "3.04",
   "max_price": "28.60",
   "products": [
@@ -18,7 +18,7 @@
       "detail": "混合国家双向号",
       "price": "3.04",
       "price_f": "3.04",
-      "stock": 144,
+      "stock": 113,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -32,7 +32,7 @@
       "detail": "阿尔及利亚",
       "price": "5.50",
       "price_f": "5.50",
-      "stock": 40,
+      "stock": 39,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -46,7 +46,7 @@
       "detail": "危地马拉 2-6个月",
       "price": "6.60",
       "price_f": "6.60",
-      "stock": 63,
+      "stock": 62,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -60,7 +60,7 @@
       "detail": "利比里亚 1-12月",
       "price": "7.70",
       "price_f": "7.70",
-      "stock": 101,
+      "stock": 100,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -74,7 +74,7 @@
       "detail": "巴西 1-12月",
       "price": "7.70",
       "price_f": "7.70",
-      "stock": 266,
+      "stock": 264,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -88,7 +88,7 @@
       "detail": "巴拉圭 1-12月",
       "price": "7.70",
       "price_f": "7.70",
-      "stock": 73,
+      "stock": 72,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -116,7 +116,7 @@
       "detail": "海地 注册满1年+ 特惠 稳定推荐",
       "price": "11.00",
       "price_f": "11.00",
-      "stock": 189,
+      "stock": 186,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -144,7 +144,7 @@
       "detail": "墨西哥 1-12月",
       "price": "12.10",
       "price_f": "12.10",
-      "stock": 233,
+      "stock": 232,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -200,7 +200,7 @@
       "detail": "香港 2-6月",
       "price": "19.36",
       "price_f": "19.36",
-      "stock": 73,
+      "stock": 70,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -298,7 +298,7 @@
       "detail": "刚果金 1-10年",
       "price": "22.00",
       "price_f": "22.00",
-      "stock": 3,
+      "stock": 2,
       "stock_cls": "st-low",
       "min_qty": 0
     },
@@ -312,7 +312,7 @@
       "detail": "伊拉克 1-10年",
       "price": "26.40",
       "price_f": "26.40",
-      "stock": 25,
+      "stock": 21,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -342,7 +342,7 @@
       "detail": "混合国家双向号",
       "price": "3.04",
       "price_f": "3.04",
-      "stock": 144,
+      "stock": 113,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -356,7 +356,7 @@
       "detail": "阿尔及利亚",
       "price": "5.50",
       "price_f": "5.50",
-      "stock": 40,
+      "stock": 39,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -370,7 +370,7 @@
       "detail": "危地马拉 2-6个月",
       "price": "6.60",
       "price_f": "6.60",
-      "stock": 63,
+      "stock": 62,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -384,7 +384,7 @@
       "detail": "利比里亚 1-12月",
       "price": "7.70",
       "price_f": "7.70",
-      "stock": 101,
+      "stock": 100,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -398,7 +398,7 @@
       "detail": "巴西 1-12月",
       "price": "7.70",
       "price_f": "7.70",
-      "stock": 266,
+      "stock": 264,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -412,7 +412,7 @@
       "detail": "巴拉圭 1-12月",
       "price": "7.70",
       "price_f": "7.70",
-      "stock": 73,
+      "stock": 72,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -440,7 +440,7 @@
       "detail": "海地 注册满1年+ 特惠 稳定推荐",
       "price": "11.00",
       "price_f": "11.00",
-      "stock": 189,
+      "stock": 186,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -468,7 +468,7 @@
       "detail": "墨西哥 1-12月",
       "price": "12.10",
       "price_f": "12.10",
-      "stock": 233,
+      "stock": 232,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -524,7 +524,7 @@
       "detail": "香港 2-6月",
       "price": "19.36",
       "price_f": "19.36",
-      "stock": 73,
+      "stock": 70,
       "stock_cls": "st-ok",
       "min_qty": 0
     },
@@ -624,7 +624,7 @@
       "detail": "刚果金 1-10年",
       "price": "22.00",
       "price_f": "22.00",
-      "stock": 3,
+      "stock": 2,
       "stock_cls": "st-low",
       "min_qty": 0
     },
@@ -638,7 +638,7 @@
       "detail": "伊拉克 1-10年",
       "price": "26.40",
       "price_f": "26.40",
-      "stock": 25,
+      "stock": 21,
       "stock_cls": "st-ok",
       "min_qty": 0
     },

@@ -714,7 +714,6 @@ ul, ol { padding-left: 1.2em; }
 .art-card h3 { font-size: 15px; line-height: 1.5; font-weight: 700; color: var(--ink); }
 .art-card p { font-size: 12.5px; line-height: 1.7; color: var(--muted); flex: 1; }
 .art-card .art-more { font-size: 12px; font-weight: 650; color: var(--cyan); }
-.art-thumb-placeholder { width: 100%; aspect-ratio: 16/9; background: #eaf5f3; color: #0b5f57; font-weight: 700; font-size: 30px; display: grid; place-items: center; }
 
 /* 面包屑 */
 .breadcrumb { font-size: 12px; color: #8aa8a0; margin: 16px 0 4px; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
@@ -744,5 +743,141 @@ ul, ol { padding-left: 1.2em; }
   .plist-row .plist-cat { display: none; }
   .plist-row .plist-stock { display: none; }
   .plist-row .plist-act { display: none; }
+}
+
+/* ============================================================
+   超级单页结构组件（参考 sp.fui.fyi，融合 Citrus 设计语言）
+   ============================================================ */
+
+/* ---- 顶部轮播 ---- */
+.sp-slides { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--deep-1); }
+.sp-slides .slide { display: none; position: relative; }
+.sp-slides .slide.on { display: block; }
+.sp-slides .slide img { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; }
+.sp-slides .slide-cap {
+  position: absolute; inset: auto 0 0 0; padding: 34px 22px 18px;
+  background: linear-gradient(180deg, transparent, rgba(3, 28, 32, .82));
+  color: #fff; text-align: center;
+}
+.sp-slides .slide-cap b { display: block; font-size: 17px; letter-spacing: .5px; margin-bottom: 3px; }
+.sp-slides .slide-cap span { font-size: 12px; color: #cfe7e3; }
+.sp-slides-dots { display: flex; gap: 7px; justify-content: center; margin-top: 12px; }
+.sp-slides-dots i { width: 8px; height: 8px; border-radius: 50%; background: #b9d4d0; cursor: pointer; }
+.sp-slides-dots i.on { background: var(--cyan); transform: scale(1.25); }
+
+/* ---- 折叠介绍面板 ---- */
+.sp-collapse { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.sp-collapse summary {
+  cursor: pointer; list-style: none; padding: 16px 20px; font-size: 15px; font-weight: 700; color: var(--ink);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; user-select: none;
+}
+.sp-collapse summary::-webkit-details-marker { display: none; }
+.sp-collapse summary::after { content: '+'; font-size: 20px; color: var(--cyan); line-height: 1; transition: transform .2s; }
+.sp-collapse[open] summary::after { transform: rotate(45deg); }
+.sp-collapse-body { padding: 4px 20px 18px; font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+/* ---- 表格区块 ---- */
+.sp-table-wrap { overflow-x: auto; }
+.sp-table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--surface); border-radius: 10px; overflow: hidden; }
+.sp-table th { background: var(--deep-2); color: #fff; text-align: left; padding: 11px 14px; font-weight: 600; }
+.sp-table th:first-child { text-align: center; }
+.sp-table td { border: 1px solid var(--line); padding: 10px 14px; color: var(--ink); }
+.sp-table td:first-child { text-align: center; font-weight: 600; }
+.sp-table td .tag { display: inline-block; }
+.sp-table tr:nth-child(even) td { background: #f7fbfa; }
+
+/* ---- 视频区块 ---- */
+.sp-video-wrap { position: relative; border-radius: var(--radius); overflow: hidden; background: #06282d; }
+.sp-video-wrap video, .sp-video-wrap img { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+.sp-video-play {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 0; background: rgba(3, 40, 46, .35); color: #fff;
+}
+.sp-video-play i { width: 62px; height: 62px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 22px; font-style: normal; box-shadow: 0 6px 22px rgba(255, 154, 66, .5); }
+
+/* ---- 客户评价（评分汇总 + 买家气泡列表） ---- */
+.sp-rev-wrap { display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start; }
+.sp-rev-score {
+  background: linear-gradient(160deg, var(--deep-1), var(--deep-2));
+  color: #fff; border-radius: 14px; padding: 20px; text-align: center; position: sticky; top: 16px;
+}
+.sp-rev-score .big { font-size: 46px; font-weight: 800; line-height: 1; color: #ffd49a; }
+.sp-rev-score .outof { font-size: 13px; color: #bfe3df; margin-top: 4px; }
+.sp-rev-score .stars { color: var(--gold); font-size: 18px; letter-spacing: 4px; margin: 10px 0 4px; }
+.sp-rev-score .count { font-size: 12px; color: #bfe3df; margin-bottom: 14px; }
+.sp-rev-bars { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+.sp-rev-bar { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #bfe3df; }
+.sp-rev-bar .track { flex: 1; height: 7px; border-radius: 5px; background: rgba(255,255,255,.14); overflow: hidden; }
+.sp-rev-bar .fill { display: block; height: 100%; border-radius: 5px; background: linear-gradient(90deg, var(--gold), var(--orange)); }
+.sp-rev-bar .num { width: 30px; text-align: right; font-variant-numeric: tabular-nums; }
+.sp-rev-score .tagline { margin-top: 12px; font-size: 11px; color: #bfe3df; border-top: 1px solid rgba(255,255,255,.15); padding-top: 10px; }
+
+.sp-rev-list { display: flex; flex-direction: column; gap: 12px; }
+.sp-rev-item {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px;
+  position: relative; box-shadow: 0 2px 8px rgba(3,52,60,.05);
+}
+.sp-rev-item .rev-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.sp-rev-item .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--deep-2); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex: 0 0 auto; }
+.sp-rev-item .rev-name { font-size: 13px; color: var(--ink); font-weight: 600; }
+.sp-rev-item .rev-meta { font-size: 11px; color: var(--muted); }
+.sp-rev-item .rev-stars { margin-left: auto; color: var(--orange); font-size: 11px; letter-spacing: 2px; }
+.sp-rev-item .rev-text { font-size: 12px; color: var(--ink); line-height: 1.75; margin: 0; }
+.sp-rev-item .rev-text::before { content: '“'; color: var(--orange); font-size: 18px; line-height: 0; vertical-align: -4px; margin-right: 3px; }
+.sp-rev-item .rev-text::after { content: '”'; color: var(--orange); font-size: 18px; line-height: 0; vertical-align: -4px; margin-left: 3px; }
+.sp-rev-item .rev-buy { display: inline-block; margin-top: 8px; font-size: 10px; color: var(--cyan); background: var(--green-soft); border: 1px solid var(--line); border-radius: 20px; padding: 2px 9px; }
+
+/* ---- 在线预定表单 ---- */
+.sp-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sp-form label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted); }
+.sp-form label.full { grid-column: 1 / -1; }
+.sp-form input, .sp-form select, .sp-form textarea {
+  border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--ink); background: #fbfefe; width: 100%;
+}
+.sp-form input:focus, .sp-form select:focus, .sp-form textarea:focus { outline: 2px solid var(--cyan); border-color: var(--cyan); }
+.sp-form .form-note { grid-column: 1 / -1; font-size: 11px; color: var(--muted); }
+
+/* ---- 网址导航（分类网格） ---- */
+.sp-navgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sp-navcard { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; text-align: center; }
+.sp-navcard .ic { font-size: 26px; line-height: 1; margin-bottom: 8px; }
+.sp-navcard b { display: block; font-size: 14px; color: var(--ink); margin-bottom: 4px; }
+.sp-navcard span { font-size: 12px; color: var(--muted); display: block; margin-bottom: 10px; }
+.sp-navcard .go { font-size: 12px; color: var(--cyan); font-weight: 600; }
+
+/* ---- 多栏图文 ---- */
+.sp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.sp-col { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.sp-col h4 { margin: 0 0 10px; font-size: 14px; color: var(--ink); }
+.sp-col li { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 13px; color: var(--ink); }
+.sp-col li:last-child { border-bottom: 0; }
+.sp-col li .dot { color: var(--orange); flex: 0 0 auto; }
+.sp-col li span { flex: 1; }
+.sp-col li small { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+
+/* ---- 悬浮客服栏 ---- */
+.sp-floatbar { position: fixed; right: 18px; bottom: 90px; z-index: 60; display: flex; flex-direction: column; gap: 10px; }
+.sp-floatbar a {
+  width: 46px; height: 46px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(3, 52, 60, .14);
+  display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--deep-2); transition: transform .15s;
+}
+.sp-floatbar a:hover { transform: translateY(-2px); }
+.sp-floatbar a.buy { background: var(--orange); color: #fff; border-color: var(--orange); }
+.sp-floatbar a.buy span { position: absolute; right: -2px; top: -2px; background: #e02306; color: #fff; font-size: 10px; padding: 1px 5px; border-radius: 8px; }
+
+/* ---- 单页区块通用 ---- */
+.sp-section { margin-top: 34px; }
+.sp-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.sp-section-head h2 { font-size: 20px; color: var(--ink); position: relative; padding-left: 12px; }
+.sp-section-head h2::before { content: ''; position: absolute; left: 0; top: 3px; bottom: 3px; width: 4px; border-radius: 3px; background: var(--orange); }
+.sp-section-head .more { font-size: 12px; color: var(--cyan); }
+
+@media (max-width: 700px) {
+  .sp-form { grid-template-columns: 1fr; }
+  .sp-cols { grid-template-columns: 1fr; }
+  .sp-slides .slide img { aspect-ratio: 16 / 9; }
+  .sp-floatbar { right: 12px; bottom: 84px; }
+  .sp-rev-wrap { grid-template-columns: 1fr; }
+  .sp-rev-score { position: static; padding: 16px; }
+  .sp-rev-score .big { font-size: 38px; }
 }
 

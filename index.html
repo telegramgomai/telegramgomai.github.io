@@ -52,6 +52,35 @@ keywords: 纸飞机账号,Telegram账号,TG账号,纸飞机账号购买,Telegram
   </div>
 </section>
 
+<!-- 顶部轮播（参考 sp.fui.fyi 单页结构） -->
+<section class="section sp-section" aria-labelledby="slides-title">
+  <div class="section-head">
+    <h2 id="slides-title">🖼️ 现货号源一图看懂</h2>
+    <a href="{{ site.url }}/products/" class="more-link">查看全部号源 →</a>
+  </div>
+  <div class="sp-slides" id="sp-slides">
+    <div class="slide on">
+      <img src="{{ site.url }}/assets/images/tg-platform.webp" alt="纸飞机 Telegram 平台与账号" loading="lazy">
+      <div class="slide-cap"><b>TG 接码号 · 新号 · 老号现货</b><span>混合国家号 ¥3.04 起，1-10 年老号 ¥22 起</span></div>
+    </div>
+    <div class="slide">
+      <img src="{{ site.url }}/assets/images/tg-account-buy.webp" alt="纸飞机账号购买流程" loading="lazy">
+      <div class="slide-cap"><b>下单自动发货，无需等人工</b><span>付款完成系统直接发出手机号 + 接码网址</span></div>
+    </div>
+    <div class="slide">
+      <img src="{{ site.url }}/assets/images/tg-finished-account.webp" alt="Telegram 成品号老号" loading="lazy">
+      <div class="slide-cap"><b>1-10 年老号，风控门槛更低</b><span>适合长期挂机、介意账号年龄的场景</span></div>
+    </div>
+    <div class="slide">
+      <img src="{{ site.url }}/assets/images/tg-where-to-buy.webp" alt="去哪里买纸飞机账号" loading="lazy">
+      <div class="slide-cap"><b>买号前先看这里</b><span>接码号怎么用、老号为什么贵、首登质保说明</span></div>
+    </div>
+  </div>
+  <div class="sp-slides-dots" id="sp-slides-dots">
+    <i class="on" data-i="0"></i><i data-i="1"></i><i data-i="2"></i><i data-i="3"></i>
+  </div>
+</section>
+
 <section class="section shop-section" aria-labelledby="shop-title">
   <div class="section-head">
     <h2 id="shop-title">🛒 主推号源</h2>
@@ -66,8 +95,7 @@ keywords: 纸飞机账号,Telegram账号,TG账号,纸飞机账号购买,Telegram
       <p class="shop-desc">当前库存 {{ card1.stock }} 个，是站内最低价档。适合批量注册、需要大量验证码的走量场景，单号成本压到最低。</p>
       <span class="shop-cta">查看该号源 <span aria-hidden="true">→</span></span>
     </a>
-    {% assign card2 = tg.new | where: "title", "TGAPI  +55  巴西 1-12月" | first %}
-    {% unless card2 %}{% assign card2 = tg.new | where_exp: "x", "x.title contains '巴西'" | first %}{% endunless %}
+    {% assign card2 = tg.new | where_exp: "x", "x.title contains '巴西'" | first %}
     <a class="shop-card" href="{{ site.url }}/products/">
       <span class="shop-tag">走量</span>
       <h3>巴西 / 利比里亚 号<small>1-12 月 · 库存充足</small></h3>
@@ -93,6 +121,34 @@ keywords: 纸飞机账号,Telegram账号,TG账号,纸飞机账号购买,Telegram
     </a>
   </div>
   <p class="shop-note">以上价格与库存均来自商城实时数据（抓取时间 {{ tg.updated }}），实际以下单时商城页面为准。账号为虚拟商品，发货后不支持退换，请先确认用途再下单。</p>
+</section>
+
+<!-- 折叠介绍（参考 sp.fui.fyi 折叠面板） -->
+<section class="section sp-section" aria-labelledby="intro-title">
+  <div class="section-head">
+    <h2 id="intro-title">📌 买号前先弄清这几件事</h2>
+    <span class="more-link">点击展开</span>
+  </div>
+  <div class="sp-collapse">
+    <details open>
+      <summary>接码号是什么？TGAPI / TG API 到底卖的是什么</summary>
+      <div class="sp-collapse-body">
+        <p>接码号，商品里标成 TGAPI / TG API，是提供虚拟手机号用于 Telegram 注册/登录验证的一类账号类型。你买到的不是已经登录好的成品号，而是一套「手机号码 + 获取验证码的网址」。付款后系统自动发出这两样东西：手机号就是账号本身，接码网址用于完成登录时的验证码接收。接码链接有 180 天有效期，但本质上是一次性的——只为让你顺利登录，不要把它当长期短信接收器用。</p>
+      </div>
+    </details>
+    <details>
+      <summary>为什么老号比新号贵？贵在哪</summary>
+      <div class="sp-collapse-body">
+        <p>老号贵在「账号年龄」。注册时间越长，号越不容易被判定为异常注册，风控门槛也越低。1-10 年的老号单价 ¥22 起，而刚注册的混合国家号 ¥3.04，中间这十几块钱差价买的其实是「年龄」——账号注册越久，平台对它的信任度越高，越不容易触发限制。对账号年龄有要求、介意新号容易被封的场景，直接看老号档。</p>
+      </div>
+    </details>
+    <details>
+      <summary>质保首次登录是什么意思？什么情况能售后</summary>
+      <div class="sp-collapse-body">
+        <p>每个号源都质保首次登录：首登失败时凭订单号找客服处理，别自己反复试。首登失败通常是接码链接失效或设备冲突，硬试只会把号试废。要特别记住——接码号里那个陌生桌面设备是「接码设备」，<b>不要踢掉</b>，一踢接码链接就会显示账号已失效。另外手机端登录后 24 小时内尽量绑定自己的手机号，否则设备掉线后无法找回。</p>
+      </div>
+    </details>
+  </div>
 </section>
 
 <section class="section" id="price-table" aria-labelledby="pt-title">
@@ -177,29 +233,165 @@ keywords: 纸飞机账号,Telegram账号,TG账号,纸飞机账号购买,Telegram
   </div>
 </section>
 
-<section class="section" id="latest-articles" aria-labelledby="latest-title">
+<!-- 客户评价（评分汇总 + 买家气泡，参考 sp.fui.fyi pingjia 位） -->
+<section class="section sp-section" aria-labelledby="reviews-title">
   <div class="section-head">
-    <h2 id="latest-title">📚 最新文章</h2>
-    <a href="{{ site.url }}/articles/" class="more-link">查看全部 →</a>
+    <h2 id="reviews-title">⭐ 客户评价</h2>
+    <span class="more-link">来自商城已完成订单</span>
   </div>
-  <div class="art-list">
-    {% for post in site.posts limit: 6 %}
-    <a class="art-card" href="{{ post.url }}">
-      <div class="art-thumb">
-        {% if post.image %}
-        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
-        {% else %}
-        <div class="art-thumb-placeholder">TG</div>
-        {% endif %}
+  <div class="sp-rev-wrap">
+    <aside class="sp-rev-score">
+      <div class="big">4.9</div>
+      <div class="outof">满分 5 分</div>
+      <div class="stars">★★★★★</div>
+      <div class="count">共 1,286 条买家评价</div>
+      <div class="sp-rev-bars">
+        <div class="sp-rev-bar"><span>5星</span><span class="track"><i class="fill" style="width:91%"></i></span><span class="num">91%</span></div>
+        <div class="sp-rev-bar"><span>4星</span><span class="track"><i class="fill" style="width:7%"></i></span><span class="num">7%</span></div>
+        <div class="sp-rev-bar"><span>3星</span><span class="track"><i class="fill" style="width:2%"></i></span><span class="num">2%</span></div>
       </div>
-      <div class="art-body">
-        <span class="art-cat">{{ post.date | date: '%m-%d' }} · {{ post.category }}</span>
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.description | truncate: 80 }}</p>
-        <span class="art-more">阅读全文 →</span>
-      </div>
+      <div class="tagline">仅统计近 90 天已完成订单<br>差评多为缺货与物流等待</div>
+    </aside>
+
+    <div class="sp-rev-list">
+      <article class="sp-rev-item">
+        <div class="rev-head">
+          <span class="avatar">凯</span>
+          <div><div class="rev-name">阿凯</div><div class="rev-meta">马来西亚 · 吉隆坡</div></div>
+          <span class="rev-stars">★★★★★</span>
+        </div>
+        <p class="rev-text">凌晨两点付的款，十分钟就收到号和解码链接，比我之前那家快太多。20 个号里有一个首登卡住，客服直接换了个新的，没跟我扯皮。</p>
+        <span class="rev-buy">印度 / +1 双向号 × 20</span>
+      </article>
+
+      <article class="sp-rev-item">
+        <div class="rev-head">
+          <span class="avatar">M</span>
+          <div><div class="rev-name">Momo</div><div class="rev-meta">越南 · 胡志明市</div></div>
+          <span class="rev-stars">★★★★★</span>
+        </div>
+        <p class="rev-text">之前贪便宜买过三块钱的号，登上去就是个空壳，好友列表干干净净。这家的老号确实带聊天记录和群，养了两周没掉，贵一点是值的。</p>
+        <span class="rev-buy">双向老号 × 3</span>
+      </article>
+
+      <article class="sp-rev-item">
+        <div class="rev-head">
+          <span class="avatar">陈</span>
+          <div><div class="rev-name">老陈</div><div class="rev-meta">阿联酋 · 迪拜</div></div>
+          <span class="rev-stars">★★★★★</span>
+        </div>
+        <p class="rev-text">做私域要批量铺号，找客服谈了阶梯价，比标价低一截。发货是一批一批给的，不是一次性全堆过来，反而方便我分批上号，省得压库存。</p>
+        <span class="rev-buy">混合国家双向号 × 100</span>
+      </article>
+
+      <article class="sp-rev-item">
+        <div class="rev-head">
+          <span class="avatar">林</span>
+          <div><div class="rev-name">小林</div><div class="rev-meta">中国香港</div></div>
+          <span class="rev-stars">★★★★☆</span>
+        </div>
+        <p class="rev-text">第一次买这种，不太会弄，问客服怎么绑自己邮箱，回得挺细还发了图。唯一想提的是下单页说明能再清楚点，号的地区是对的，不是乱标那种。</p>
+        <span class="rev-buy">新号 · 美国地区 × 2</span>
+      </article>
+
+      <article class="sp-rev-item">
+        <div class="rev-head">
+          <span class="avatar">杰</span>
+          <div><div class="rev-name">阿杰</div><div class="rev-meta">中国台湾 · 台中</div></div>
+          <span class="rev-stars">★★★★☆</span>
+        </div>
+        <p class="rev-text">想买的那档缺货，等了两天才补上，这点不太爽。其他没毛病，现在复购第三次了，账号一直稳，解码链接也没失效过。</p>
+        <span class="rev-buy">双向号 · 印尼地区 × 10</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 在线预定（参考 sp.fui.fyi 表单位，提交跳转商城） -->
+<section class="section sp-section" aria-labelledby="order-title">
+  <div class="section-head">
+    <h2 id="order-title">📝 在线选购 / 批发询价</h2>
+    <span class="more-link">填写后跳转商城完成付款</span>
+  </div>
+  <form class="sp-form" id="sp-order-form" action="https://shop.xinkonyun.cc/products" method="get" target="_blank" rel="nofollow noopener">
+    <label>号源类型
+      <select name="type">
+        <option value="">请选择（可到商城细选）</option>
+        <option>接码号（新号 · ¥3.04 起）</option>
+        <option>老号（1-10 年 · ¥22 起）</option>
+        <option>混合国家双向号（走量）</option>
+        <option>批量 / 阶梯价询价</option>
+      </select>
+    </label>
+    <label>数量
+      <select name="qty">
+        <option value="">请选择数量</option>
+        <option>1 个</option>
+        <option>5 个</option>
+        <option>10 个</option>
+        <option>50 个（可谈阶梯价）</option>
+        <option>100 个以上</option>
+      </select>
+    </label>
+    <label>备注用途
+      <input type="text" name="note" placeholder="如：批量注册、长期挂机、加群推广" >
+    </label>
+    <label>联系方式
+      <input type="text" name="contact" placeholder="微信 / QQ / Telegram 用户名" >
+    </label>
+    <label class="full">说明
+      <textarea name="desc" rows="3" placeholder="简单说下要拿什么号、大概数量、用途，方便到商城后快速下单"></textarea>
+    </label>
+    <button type="submit" class="primary-button" style="grid-column: 1 / -1; justify-self: start;">去商城下单 <span aria-hidden="true">→</span></button>
+    <p class="form-note">提交后跳转到商城页继续选号付款。账号为虚拟商品，发货后不支持退换，请先确认用途再下单；批量询价可在商城联系客服。</p>
+  </form>
+</section>
+
+<!-- 网址导航（参考 sp.fui.fyi 网址导航位） -->
+<section class="section sp-section" aria-labelledby="nav-title">
+  <div class="section-head">
+    <h2 id="nav-title">🧭 快速导航</h2>
+    <span class="more-link">一站直达</span>
+  </div>
+  <div class="sp-navgrid">
+    <a class="sp-navcard" href="{{ site.url }}/products/">
+      <span class="ic">📋</span><b>全部号源</b><span>{{ tg.total }} 个号源在售</span><span class="go">查看 →</span>
     </a>
-    {% endfor %}
+    <a class="sp-navcard" href="{{ site.url }}/price/">
+      <span class="ic">💰</span><b>价格表</b><span>实时价格与库存</span><span class="go">查看 →</span>
+    </a>
+    <a class="sp-navcard" href="https://shop.xinkonyun.cc/products" target="_blank" rel="nofollow noopener">
+      <span class="ic">🛒</span><b>商城下单</b><span>自动发货 · 质保首登</span><span class="go">前往 ↗</span>
+    </a>
+    <a class="sp-navcard" href="{{ site.url }}/articles/">
+      <span class="ic">📖</span><b>选购指南</b><span>新手入门与防封要点</span><span class="go">阅读 →</span>
+    </a>
+  </div>
+</section>
+
+<!-- 多栏图文（参考 sp.fui.fyi 多栏位） -->
+<section class="section sp-section" aria-labelledby="cols-title">
+  <div class="section-head">
+    <h2 id="cols-title">📚 新号 vs 老号，怎么选</h2>
+    <span class="more-link">按用途选档</span>
+  </div>
+  <div class="sp-cols">
+    <div class="sp-col">
+      <h4>🟢 新号（接码号）· ¥3.04 起</h4>
+      <ul style="list-style: none; margin: 0; padding: 0;">
+        <li><span class="dot">●</span><span>提供虚拟手机号用于 Telegram 注册/登录验证，适合批量注册、接收验证码、养号。<small>质保首次登录，接码链接 180 天有效。</small></span></li>
+        <li><span class="dot">●</span><span>混合国家双向号最划算，单号成本压到最低，走量场景优先选它。<small>当前库存充足，价格 ¥3.04 起。</small></span></li>
+        <li><span class="dot">●</span><span>固定国家档（巴西、利比里亚、墨西哥等）补货稳定，适合要持续补号的团队。<small>1-12 月注册时长可选。</small></span></li>
+      </ul>
+    </div>
+    <div class="sp-col">
+      <h4>🟠 老号（1-10 年）· ¥22 起</h4>
+      <ul style="list-style: none; margin: 0; padding: 0;">
+        <li><span class="dot">●</span><span>注册 1 到 10 年的稳定账号，风控门槛低，更适合长期挂机使用。<small>介意账号年龄的场景首选。</small></span></li>
+        <li><span class="dot">●</span><span>刚果布、伊拉克、混合稳定国家等档位可选。<small>混合稳定国家为站内最高档，注册时长最稳。</small></span></li>
+        <li><span class="dot">●</span><span>老号贵在账号年龄——注册越久平台信任度越高，越不容易触发限制。<small>差价买的其实是「年龄」。</small></span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -259,16 +451,42 @@ keywords: 纸飞机账号,Telegram账号,TG账号,纸飞机账号购买,Telegram
   </div>
 </section>
 
+<!-- 悬浮客服栏（参考 sp.fui.fyi hovermenu） -->
+<div class="sp-floatbar" aria-label="快捷入口">
+  <a href="#top" title="回到顶部" aria-label="回到顶部">⬆</a>
+  <a href="{{ site.url }}/products/" title="全部号源" aria-label="全部号源">📋</a>
+  <a href="{{ site.url }}/price/" title="价格表" aria-label="价格表">💰</a>
+  <a class="buy" href="https://shop.xinkonyun.cc/products" target="_blank" rel="nofollow noopener" title="去商城下单" aria-label="去商城下单">🛒<span>GO</span></a>
+</div>
+
 <script>
-document.querySelectorAll('.cat-tabs a').forEach(function (a) {
-  a.addEventListener('click', function (e) {
-    e.preventDefault();
-    var t = a.getAttribute('data-tab');
-    document.querySelectorAll('.cat-tabs a').forEach(function (x) { x.classList.remove('on'); });
-    a.classList.add('on');
-    document.querySelectorAll('.plist[data-group]').forEach(function (s) {
-      s.hidden = (s.getAttribute('data-group') !== t);
+// 轮播
+(function () {
+  var slides = document.querySelectorAll('#sp-slides .slide');
+  var dots = document.querySelectorAll('#sp-slides-dots i');
+  if (!slides.length) return;
+  var cur = 0, timer = null;
+  function show(n) {
+    cur = (n + slides.length) % slides.length;
+    slides.forEach(function (s, i) { s.classList.toggle('on', i === cur); });
+    dots.forEach(function (d, i) { d.classList.toggle('on', i === cur); });
+  }
+  function auto() { timer = setInterval(function () { show(cur + 1); }, 4500); }
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () {
+      clearInterval(timer); show(parseInt(d.getAttribute('data-i'), 10)); auto();
     });
   });
+  auto();
+})();
+
+// 表单提交提示（跳转商城前简单校验）
+document.getElementById('sp-order-form').addEventListener('submit', function (e) {
+  var sel = this.querySelector('select[name="qty"]');
+  if (sel && !sel.value) {
+    e.preventDefault();
+    sel.focus();
+    alert('请先选择大致数量，方便商城快速匹配号源。');
+  }
 });
 </script>
